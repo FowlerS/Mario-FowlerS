@@ -11,6 +11,7 @@ game.PlayerEntity = me.Entity.extend({
                 return (new me.Rect(0, 0, 128, 128)).toPolygon();
             }
         }]);
+        this.renderable.addAnimation();
         this.body.setVelocity(5, 0);
     },
     
