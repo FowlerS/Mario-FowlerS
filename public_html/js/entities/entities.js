@@ -11,11 +11,15 @@ game.PlayerEntity = me.Entity.extend({
                 return (new me.Rect(0, 0, 128, 128)).toPolygon();
             }
         }]);
-        this.renderable.addAnimation();
-        this.body.setVelocity(5, 0);
+        this.renderable.addAnimation("idle", [3]);
+        this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13, 14], 80);
+        
+        this.renderable.setCurrentAnimation("idle");
+        
+        this.body.setVelocity(5, 20);
     },
     
-    update: function(){
+    update: function(delta){
         if(me.input.isKeyPressed("right")){
             this.body.vel.x += this.body.accel.x * me.timer.tick;
         }else{
