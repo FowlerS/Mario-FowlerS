@@ -37,3 +37,14 @@ game.PlayerEntity = me.Entity.extend({
     }
     
 });
+
+game.LevelTrigger = me.Entity.extend({
+    init: function(x, y, settings){
+        this.super(me.Entity, 'init', [x, y, settings]);
+        this.body.onCollision = this.onCollision.bind(this);
+        this.level = settings.level;
+    },
+    onCollision: function(){
+        
+    }
+});
