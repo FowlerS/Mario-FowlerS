@@ -8,8 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("ShamonLevel01");
                 
-                var player = me.pool.pull("Mario", 0, 420, {});
-                me.game.world.addChild(player, 3);
+                this.resetPlayer(0, 400);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
 
@@ -25,5 +24,10 @@ game.PlayScreen = me.ScreenObject.extend({
 	onDestroyEvent: function() {
 		// remove the HUD from the game world
 		me.game.world.removeChild(this.HUD);
-	}
+	},
+        
+        resetPlayer: function(x, y){
+            var player = me.pool.pull("Mario", x, y, {});
+            me.game.world.addChild(player, 5);
+        }
 });
