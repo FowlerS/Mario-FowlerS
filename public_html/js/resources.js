@@ -8,6 +8,7 @@ game.resources = [
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "Mario", type:"image", src: "data/img/player1.png"},
+        {name: "titlescreen", type:"image", src: "data/img/player1.png"},
 
 	/* Atlases 
 	 * @example
@@ -21,7 +22,7 @@ game.resources = [
  	 */
         
         {name: "ShamonLevel01", type:"tmx", src: "data/map/ShamonLevel01.tmx"},
-        {name: "ShamonLevel02", type:"tmx", src: "data/map/ShamonLevel02.tmx"},
+        {name: "ShamonLevel02", type:"tmx", src: "data/map/ShamonLevel02.tmx"}
 
 	 /*Background music. 
 	 * @example
