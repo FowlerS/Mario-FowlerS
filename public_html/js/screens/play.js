@@ -6,11 +6,11 @@ game.PlayScreen = me.ScreenObject.extend({
 		// reset the score
 		game.data.score = 0;
                 
-                me.levelDirector.loadLevel("ShamonLevel01");
-//                
-//                this.resetPlayer(0, 400);
-//                
-//                me.input.bindKey(me.input.KEY.RIGHT, "right");
+                me.levelDirector.loadLevel("ShamonLevel02");
+                
+                this.resetPlayer(0, 0);
+                
+                me.input.bindKey(me.input.KEY.RIGHT, "right");
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
@@ -28,6 +28,6 @@ game.PlayScreen = me.ScreenObject.extend({
         
         resetPlayer: function(x, y){
             var player = me.pool.pull("Mario", x, y, {});
-            me.game.world.addChild(player, 5);
+            me.game.world.addChild(player, 7);
         }
 });
