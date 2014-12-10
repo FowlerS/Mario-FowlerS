@@ -6,27 +6,27 @@ game.TitleScreen = me.ScreenObject.extend({
 		me.game.world.addChild( new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10);
                 me.input.bindKey(me.input.KEY.ENTER, "Start");
                 
-//                me.game.world.addChild(new (me.Renderable.extend((
-//                    init: function(){
-//                        this._super(me.Renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height])
-//                        this.font = new me.Font("Arial", 46, "white");
-//                        
-//                    },
-//                    
-//                    draw: function(){
-//                        this.font.draw(renderer.getContext(), "Marioish", 450, 130);
-//                        this.font.draw(renderer.getContext(), "Press Enter To Play", 250, 530);
-//                        
-//                    }
-//                    
-//            ))));
-//        
-//                this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge){
-//                    if(action === "Start"){
-//                        me.state.change(me.state.PLAY);
-//                    }
-//                });
-//	},
+                me.game.world.addChild(new (me.Renderable.extend({
+                    init: function(){
+                        this._super(me.Renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height]);
+                        this.font = new me.Font("Arial", 46, "white");
+                        
+                    },
+                    
+                    draw: function(renderer){
+                        this.font.draw(renderer.getContext(), "Marioish", 450, 130);
+                        this.font.draw(renderer.getContext(), "Press Enter To Play", 250, 530);
+                        
+                    }
+                    
+                })));
+        
+                this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge){
+                    if(action === "Start"){
+                        me.state.change(me.state.PLAY);
+                    }
+                });
+	},
 	
 	
 	/**	

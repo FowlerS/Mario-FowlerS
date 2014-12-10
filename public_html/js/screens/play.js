@@ -8,7 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("ShamonLevel01");
                 
-                this.resetPlayer(0, 0);
+                this.resetPlayer(0, 400);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
 
@@ -28,6 +28,6 @@ game.PlayScreen = me.ScreenObject.extend({
         
         resetPlayer: function(x, y){
             var player = me.pool.pull("Mario", x, y, {});
-            me.game.world.addChild(player, 7);
+            me.game.world.addChild(player, 3);
         }
 });
